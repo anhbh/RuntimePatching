@@ -42,7 +42,6 @@ int export_func( void (*fp)(), const char *filename )
 void (*import_func( const char *filename, unsigned char **code_buffer, unsigned int *size ))( void )
 {
 	FILE *fi = fopen( filename, "rb" );
-	unsigned int i=0;
 
 	if( fi == NULL )
 	{
@@ -82,14 +81,14 @@ int main( void )
 	// call some_func
 	printf( "some_func = %08x\n", orig_fp() );
 
-	// export some_func to file, uncomment as needed
+	// export some_func to file, comment as needed
 	export_func( (void (*)()) orig_fp, "some_func.bin" );
 
 	unsigned int (*fp)();
 	unsigned char *cb = NULL;
 	int cb_sz = 0;
 
-	// import imp_func from file, uncomment as needed
+	// import imp_func from file, comment as needed
 	fp = (unsigned int (*)()) import_func( "some_func.bin", &cb, &cb_sz );
 
 	// DEBUG: print addresses
