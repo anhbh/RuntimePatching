@@ -23,44 +23,24 @@ the provided test program *did* work on standard Linux running kernel 2.6.24.
 
 #### Usage ####
 
-> $ cd asm\_patching
-
-> $ make
-
-> $ ./main
-
->  # sample output for imp\_func != some\_func
-
->  some\_func = 00000063
-
->  main: ofp @ 080485a4
-
->  main:  fp @ 0933d170
-
->  imp\_func size = 41
-
->  imp\_func:
-
->   55 89 e5 83
-
->   ec 10 c7 45
-
->   f8 00 00 00
-
->   00 c7 45 fc
-
->   00 00 00 00
-
->   eb 08 83 45
-
->   f8 01 83 45
-
->   fc 01 83 7d
-
->   fc 62 76 f2
-
->   8b 45 f8 c9
-
->   c3 00 00 00
-
->  imp\_func = 000000c6
+	$ cd asm\_patching
+	$ make
+	$ ./main
+	 # sample output for imp\_func != some\_func
+	 some\_func = 00000063
+	 main: ofp @ 080485a4
+	 main:  fp @ 0933d170
+	 imp\_func size = 41
+	 imp\_func:
+		55 89 e5 83
+		ec 10 c7 45
+		f8 00 00 00
+		00 c7 45 fc
+		00 00 00 00
+		eb 08 83 45
+		f8 01 83 45
+		fc 01 83 7d
+		fc 62 76 f2
+		8b 45 f8 c9
+		c3 00 00 00
+	 imp\_func = 000000c6
