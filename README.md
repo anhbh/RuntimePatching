@@ -44,3 +44,36 @@ the provided test program *did* work on standard Linux running kernel 2.6.24.
 		8b 45 f8 c9
 		c3 00 00 00
 	 imp_func = 000000c6
+
+#### Problems ####
+
+- static vars in imported func (`prtinf( "Test\n" )` --> segfault)
+- function calls from within imported func?
+- memory protection in recent kernels forbids call to imported function --> segfault
+- --> wrong approach
+
+
+
+### Shared Library Patching ###
+
+	ToDo
+
+
+#### Description ####
+
+	ToDo
+
+
+#### Usage ####
+
+Both C and C++ version of the sample have identical usage. Only outputs may
+differ:
+
+	$ cd cd dynlib_patching/cpp/
+	$ make
+	$ ./main
+	 Foo::init: Hello World!
+	 ...
+	 <now modify code + replace .so>
+	 ...
+	 Foo::init: H3ll0 W0r1d!
