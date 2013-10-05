@@ -5,7 +5,7 @@ allows a running executable to update/modify some of it's functions/modules
 during runtime.
 
 If not otherwise mentioned all tests were performed on standard Linux Kernel
-`3.2.0`.
+3.2.0.
 
 
 ### asm - Patching ###
@@ -49,7 +49,7 @@ the provided test program *did* work on standard Linux running kernel 2.6.24.
 
 - static vars in imported func (`prtinf( "Test\n" )` --> segfault)
 - function calls from within imported func?
-- memory protection in recent kernels forbids call to imported function --> segfault
+- memory protection in recent kernels forbids call to imported function?! --> segfault
 - --> wrong approach
 
 
@@ -66,10 +66,10 @@ the provided test program *did* work on standard Linux running kernel 2.6.24.
 
 #### Usage ####
 
-Both C and C++ version of the sample have identical usage. Only outputs may
+Both C and C++ version of the sample have identical usage. Only their outputs
 differ:
 
-	$ cd cd dynlib_patching/cpp/
+	$ cd dynlib_patching/cpp/
 	$ make
 	$ ./main
 	 Foo::init: Hello World!
